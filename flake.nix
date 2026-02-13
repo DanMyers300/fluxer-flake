@@ -22,6 +22,17 @@
         nativeBuildInputs = [
           pkgs.autoPatchelfHook
           pkgs.makeWrapper
+          pkgs.copyDesktopItems
+        ];
+
+        desktopItems = [
+          (pkgs.makeDesktopItem {
+            name = "fluxer";
+            desktopName = "Fluxer";
+            exec = "fluxer";
+            comment = "Fluxer desktop application";
+            categories = [ "Network" "AudioVideo" ];
+          })
         ];
 
         buildInputs = [
